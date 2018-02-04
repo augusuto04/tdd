@@ -23,7 +23,7 @@ public enum PokerHand {
      * @param cards cards to evaluate
      * @return evaluation
      */
-    public final static PokerHand evaluateHand(final TwoCards cards) {
+    public static final PokerHand evaluateHand(final TwoCards cards) {
         if (cards.hasSameSuit(0, 1) && cards.isRankConsecutive()) {
             return STRAIGHT_FLUSH;
         } else if (cards.hasSameSuit(0, 1)) {
