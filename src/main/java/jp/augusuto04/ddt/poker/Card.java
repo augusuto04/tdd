@@ -12,8 +12,8 @@ public class Card {
 
     /**
      * Constructor.
-     * @param suit
-     * @param rank
+     * @param suit suit of the card
+     * @param rank rank of the card
      */
     public Card(final Suit suit, final int rank) {
         if (rank <= 0 || rank > KING) {
@@ -25,8 +25,8 @@ public class Card {
 
     /**
      * Constructor.
-     * @param suit
-     * @param rank
+     * @param suit suit of the card
+     * @param rank rank of the card
      */
     public Card(final Suit suit, final String rank) {
         this.suit = suit;

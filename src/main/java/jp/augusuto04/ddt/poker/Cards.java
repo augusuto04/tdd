@@ -15,7 +15,7 @@ public abstract class Cards implements Comparable<Cards> {
      * Constructor.
      * @param cards
      */
-    protected Cards(Card... cards) {
+    protected Cards(final Card... cards) {
         this.cards = cards;
     }
 
@@ -32,7 +32,7 @@ public abstract class Cards implements Comparable<Cards> {
      * @param index
      * @return
      */
-    public Card getCard(int index) {
+    public final Card getCard(final int index) {
         if (isIllegalIndex(index)) {
             throw new IllegalArgumentException();
         }
@@ -45,7 +45,7 @@ public abstract class Cards implements Comparable<Cards> {
      * @param index2
      * @return
      */
-    public boolean hasSameRank(int index1, int index2) {
+    public final boolean hasSameRank(final int index1, final int index2) {
         if (isIllegalIndex(index1) || isIllegalIndex(index2)) {
             throw new IllegalArgumentException();
         }
@@ -58,7 +58,7 @@ public abstract class Cards implements Comparable<Cards> {
      * @param index2
      * @return
      */
-    public boolean hasSameSuit(int index1, int index2) {
+    public final boolean hasSameSuit(final int index1, final int index2) {
         if (isIllegalIndex(index1) || isIllegalIndex(index2)) {
             throw new IllegalArgumentException();
         }
@@ -75,7 +75,7 @@ public abstract class Cards implements Comparable<Cards> {
      * Get the notion of all the cards joined by a white line.
      * @return
      */
-    public String getNotion() {
+    public final String getNotion() {
         StringJoiner sj = new StringJoiner(" ");
         for (Card card : cards) {
             sj.add(card.getNotion());
@@ -89,7 +89,7 @@ public abstract class Cards implements Comparable<Cards> {
      * @param index
      * @return
      */
-    private boolean isIllegalIndex(int index) {
+    private final boolean isIllegalIndex(final int index) {
         return index < 0 || index >= cards.length;
     }
 }
