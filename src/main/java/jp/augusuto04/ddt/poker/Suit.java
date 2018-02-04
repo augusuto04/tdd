@@ -1,18 +1,31 @@
 package jp.augusuto04.ddt.poker;
 
+/**
+ * Suit of a card.
+ * @author shin
+ */
 public enum Suit {
-	SPADE("s"),
-	CLUB("c"),
-	HEART("h︎"),
-	DIAMOND("d︎");
+    SPADE("s"),
+    CLUB("c"),
+    HEART("h︎"),
+    DIAMOND("d︎");
 
-	private String notion;
+    /** The notion of the suit. */
+    private String notion;
 
-	Suit (String notion) {
-		this.notion = notion;
-	}
+    /**
+     * Constructor.
+     * @param notion
+     */
+    Suit (String notion) {
+        this.notion = notion;
+    }
 
-	public String getNotion() {
-		return notion;
-	}
+    /**
+     * Get the notion of the suit.
+     * @return
+     */
+    public String getNotion() {
+        return notion;
+    }
 }
