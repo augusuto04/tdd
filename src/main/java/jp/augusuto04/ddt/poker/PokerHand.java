@@ -15,8 +15,8 @@ public enum PokerHand {
 
     /**
      * Evaluate the hand for two card poker.
-     * @param cards
-     * @return
+     * @param cards cards to evaluate
+     * @return evaluation
      */
     public static PokerHand evaluateHand(TwoCards cards) {
         if (cards.hasSameSuit(0, 1) && cards.isRankConsecutive()) {

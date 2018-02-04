@@ -13,7 +13,7 @@ public abstract class Cards implements Comparable<Cards> {
 
     /**
      * Constructor.
-     * @param cards
+     * @param cards cards
      */
     protected Cards(final Card... cards) {
         this.cards = cards;
@@ -21,7 +21,7 @@ public abstract class Cards implements Comparable<Cards> {
 
     /**
      * Get cards.
-     * @return
+     * @return cards
      */
     public Card[] getCards() {
         return cards;
@@ -29,8 +29,8 @@ public abstract class Cards implements Comparable<Cards> {
 
     /**
      * Get the card of the index.
-     * @param index
-     * @return
+     * @param index index of the card to get
+     * @return card of the index
      */
     public final Card getCard(final int index) {
         if (isIllegalIndex(index)) {
@@ -41,8 +41,8 @@ public abstract class Cards implements Comparable<Cards> {
 
     /**
      * Compare if the cards have the same rank.
-     * @param index1
-     * @param index2
+     * @param index1 index of card to compare
+     * @param index2 index of card to compare
      * @return
      */
     public final boolean hasSameRank(final int index1, final int index2) {
@@ -54,8 +54,8 @@ public abstract class Cards implements Comparable<Cards> {
 
     /**
      * Compare if the cards have the same suit.
-     * @param index1
-     * @param index2
+     * @param index1 index of card to compare
+     * @param index2 index of card to compare
      * @return
      */
     public final boolean hasSameSuit(final int index1, final int index2) {
@@ -67,13 +67,13 @@ public abstract class Cards implements Comparable<Cards> {
 
     /**
      * Evaluate the hand.
-     * @return
+     * @return evaluation of card
      */
     public abstract PokerHand evalHand();
 
     /**
      * Get the notion of all the cards joined by a white line.
-     * @return
+     * @return notion
      */
     public final String getNotion() {
         StringJoiner sj = new StringJoiner(" ");
@@ -86,10 +86,10 @@ public abstract class Cards implements Comparable<Cards> {
     /**
      * Checks if the index is in the
      * range of the cards this class holds.
-     * @param index
-     * @return
+     * @param index index of the card to check
+     * @return if the index is legal
      */
-    private final boolean isIllegalIndex(final int index) {
+    private boolean isIllegalIndex(final int index) {
         return index < 0 || index >= cards.length;
     }
 }

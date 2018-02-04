@@ -15,7 +15,7 @@ public class TwoCards extends Cards {
      * @param firstCard first card
      * @param secondCard second card
      */
-    public TwoCards(Card firstCard, Card secondCard) {
+    public TwoCards(final Card firstCard, final Card secondCard) {
         super(firstCard, secondCard);
     }
 

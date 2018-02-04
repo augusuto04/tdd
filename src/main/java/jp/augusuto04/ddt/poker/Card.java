@@ -1,13 +1,25 @@
 package jp.augusuto04.ddt.poker;
 
+/**
+ * Card.
+ * @author shin
+ */
 public class Card {
+    /** The suit of this card */
     private final Suit suit;
+
+    /** The rank of this card */
     private final int rank;
 
+    /** Rank of the Ace */
     private static final int ACE = 1;
+    /** Rank of the Ten */
     private static final int TEN = 10;
+    /** Rank of the Jack */
     private static final int JACK = 11;
+    /** Rank of the Queen */
     private static final int QUEEN = 12;
+    /** Rank of the King */
     private static final int KING = 13;
 
     /**
@@ -35,8 +47,8 @@ public class Card {
 
     /**
      * Convert the string expression of the rank to int.
-     * @param rank
-     * @return
+     * @param rank String expression of the rank
+     * @return int expression of the rank
      */
     private static int convertRank(final String rank) {
         switch (rank) {
@@ -62,8 +74,8 @@ public class Card {
 
     /**
      * Get the notion of rank.
-     * @param rank
-     * @return
+     * @param rank rank
+     * @return String expression of the rank
      */
     private static String getNotionOfRank(final int rank) {
         switch (rank) {
@@ -84,7 +96,7 @@ public class Card {
 
     /**
      * Get the suit of this card.
-     * @return
+     * @return suit
      */
     public Suit getSuit() {
         return suit;
@@ -92,7 +104,7 @@ public class Card {
 
     /**
      * Get the rank of this card in int.
-     * @return
+     * @return rank
      */
     public int getRank() {
         return rank;
@@ -103,7 +115,7 @@ public class Card {
      * ex) ace of spades will be As
      * rank will be A, T, J, Q, K or number itself
      * suit will be s, c, h or d
-     * @return
+     * @return notion of the card
      */
     public String getNotion() {
         return getNotionOfRank(rank) + suit.getNotion();
@@ -111,8 +123,8 @@ public class Card {
 
     /**
      * Evaluates if the suit is the same.
-     * @param card
-     * @return
+     * @param card card to compare
+     * @return if the suit is the same
      */
     public boolean hasSameSuit(final Card card) {
         return suit == card.getSuit();
@@ -120,8 +132,8 @@ public class Card {
 
     /**
      * Evaluates if the rank is the same.
-     * @param card
-     * @return
+     * @param card card to compare
+     * @return if the rank is the same
      */
     public boolean hasSameRank(final Card card) {
         return rank == card.getRank();

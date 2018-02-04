@@ -1,5 +1,5 @@
 /**
- * Classes that extends Cards
+ * Classes that extends Cards.
  * @author shin
  *
  */

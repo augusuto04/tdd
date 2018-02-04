@@ -15,7 +15,7 @@ public enum Suit {
 
     /**
      * Constructor.
-     * @param notion
+     * @param notion notion
      */
     Suit(String notion) {
         this.notion = notion;
@@ -23,7 +23,7 @@ public enum Suit {
 
     /**
      * Get the notion of the suit.
-     * @return
+     * @return notion
      */
     public String getNotion() {
         return notion;
