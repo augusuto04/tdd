@@ -98,7 +98,7 @@ public class Card {
      * Get the suit of this card.
      * @return suit
      */
-    public Suit getSuit() {
+    public final Suit getSuit() {
         return suit;
     }
 
@@ -106,7 +106,7 @@ public class Card {
      * Get the rank of this card in int.
      * @return rank
      */
-    public int getRank() {
+    public final int getRank() {
         return rank;
     }
 
@@ -117,7 +117,7 @@ public class Card {
      * suit will be s, c, h or d
      * @return notion of the card
      */
-    public String getNotion() {
+    public final String getNotion() {
         return getNotionOfRank(rank) + suit.getNotion();
     }
 
@@ -126,7 +126,7 @@ public class Card {
      * @param card card to compare
      * @return if the suit is the same
      */
-    public boolean hasSameSuit(final Card card) {
+    public final boolean hasSameSuit(final Card card) {
         return suit == card.getSuit();
     }
 
@@ -135,7 +135,7 @@ public class Card {
      * @param card card to compare
      * @return if the rank is the same
      */
-    public boolean hasSameRank(final Card card) {
+    public final boolean hasSameRank(final Card card) {
         return rank == card.getRank();
     }
 }

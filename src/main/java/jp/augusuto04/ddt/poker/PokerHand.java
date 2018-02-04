@@ -7,10 +7,15 @@ import jp.augusuto04.ddt.poker.cards.TwoCards;
  * @author shin
  */
 public enum PokerHand {
+    /** straight flush. */
     STRAIGHT_FLUSH,
+    /** flush. */
     FLUSH,
+    /** straight. */
     STRAIGHT,
+    /** pair. */
     PAIR,
+    /** high card. */
     HIGH_CARD;
 
     /**
@@ -18,7 +23,7 @@ public enum PokerHand {
      * @param cards cards to evaluate
      * @return evaluation
      */
-    public static PokerHand evaluateHand(TwoCards cards) {
+    public final static PokerHand evaluateHand(final TwoCards cards) {
         if (cards.hasSameSuit(0, 1) && cards.isRankConsecutive()) {
             return STRAIGHT_FLUSH;
         } else if (cards.hasSameSuit(0, 1)) {

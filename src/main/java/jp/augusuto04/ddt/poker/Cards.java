@@ -8,7 +8,7 @@ import java.util.StringJoiner;
  */
 public abstract class Cards implements Comparable<Cards> {
 
-    /** Cards of this hand */
+    /** Cards of this hand. */
     private final Card[] cards;
 
     /**
@@ -23,7 +23,7 @@ public abstract class Cards implements Comparable<Cards> {
      * Get cards.
      * @return cards
      */
-    public Card[] getCards() {
+    public final Card[] getCards() {
         return cards;
     }
 

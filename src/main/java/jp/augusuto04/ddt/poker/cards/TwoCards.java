@@ -40,9 +40,9 @@ public class TwoCards extends Cards {
      * @author shin
      */
     private class TwoCardHandValue {
-        /** hand */
+        /** hand. */
         private PokerHand hand;
-        /** cards to evaluate then hand is the same */
+        /** cards to evaluate then hand is the same. */
         private Card[] cards;
     }
 
