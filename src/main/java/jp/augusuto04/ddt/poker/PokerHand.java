@@ -8,7 +8,7 @@ public enum PokerHand {
 	STRAIGHT,
 	PAIR,
 	HIGH_CARD;
-	
+
 	public static PokerHand evaluateHand(TwoCards cards) {
 		if (cards.hasSameSuit(0, 1) && cards.isRankConsecutive()) {
 			return STRAIGHT_FLUSH;
