@@ -10,12 +10,12 @@ public class Card {
     private static final int QUEEN = 12;
     private static final int KING = 13;
 
-	/**
-	 * Constructor.
-	 * @param suit
-	 * @param rank
-	 */
-    public Card(Suit suit, int rank) {
+    /**
+     * Constructor.
+     * @param suit
+     * @param rank
+     */
+    public Card(final Suit suit, final int rank) {
         if (rank <= 0 || rank > KING) {
             throw new IllegalArgumentException("");
         }
@@ -28,7 +28,7 @@ public class Card {
      * @param suit
      * @param rank
      */
-    public Card(Suit suit, String rank) {
+    public Card(final Suit suit, final String rank) {
         this.suit = suit;
         this.rank = convertRank(rank);
     }
@@ -38,7 +38,7 @@ public class Card {
      * @param rank
      * @return
      */
-    private static int convertRank(String rank) {
+    private static int convertRank(final String rank) {
         switch (rank) {
         case "A":
             return ACE;
@@ -52,7 +52,7 @@ public class Card {
             return KING;
         default:
             int intRank = Integer.valueOf(rank);
-            if (intRank <= 0 || intRank > 13) {
+            if (intRank <= 0 || intRank > KING) {
                 throw new IllegalArgumentException(
                         "rank was less than 1 or more than 13");
             }
@@ -65,7 +65,7 @@ public class Card {
      * @param rank
      * @return
      */
-    private static String getNotionOfRank(int rank) {
+    private static String getNotionOfRank(final int rank) {
         switch (rank) {
         case ACE:
             return "A";
@@ -114,7 +114,7 @@ public class Card {
      * @param card
      * @return
      */
-    public boolean hasSameSuit(Card card) {
+    public boolean hasSameSuit(final Card card) {
         return suit == card.getSuit();
     }
 
@@ -123,7 +123,7 @@ public class Card {
      * @param card
      * @return
      */
-    public boolean hasSameRank(Card card) {
+    public boolean hasSameRank(final Card card) {
         return rank == card.getRank();
-}
+    }
 }

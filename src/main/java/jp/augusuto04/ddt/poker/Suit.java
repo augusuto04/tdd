@@ -17,7 +17,7 @@ public enum Suit {
      * Constructor.
      * @param notion
      */
-    Suit (String notion) {
+    Suit(String notion) {
         this.notion = notion;
     }
 

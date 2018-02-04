@@ -11,12 +11,12 @@ public class TwoCards extends Cards {
     }
 
     @Override
-    public PokerHand evalHand() {
+    public final PokerHand evalHand() {
         return PokerHand.evaluateHand(this);
     }
 
-    public boolean isRankConsecutive() {
-        return Math.abs(CARDS[0].getRank() - CARDS[1].getRank()) == 1;
+    public final boolean isRankConsecutive() {
+        return Math.abs(getCard(0).getRank() - getCard(1).getRank()) == 1;
     }
 
     private class TwoCardHandValue {
@@ -25,7 +25,7 @@ public class TwoCards extends Cards {
     }
 
     @Override
-    public int compareTo(Cards o) {
+    public final int compareTo(Cards o) {
         // TODO Auto-generated method stub
         return 0;
     }

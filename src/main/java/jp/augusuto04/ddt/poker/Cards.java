@@ -9,14 +9,22 @@ import java.util.StringJoiner;
 public abstract class Cards implements Comparable<Cards> {
 
     /** Cards of this hand */
-    protected final Card[] CARDS;
+    private final Card[] cards;
 
     /**
      * Constructor.
      * @param cards
      */
     protected Cards(Card... cards) {
-        CARDS = cards;
+        this.cards = cards;
+    }
+
+    /**
+     * Get cards.
+     * @return
+     */
+    public Card[] getCards() {
+        return cards;
     }
 
     /**
@@ -28,7 +36,7 @@ public abstract class Cards implements Comparable<Cards> {
         if (isIllegalIndex(index)) {
             throw new IllegalArgumentException();
         }
-        return CARDS[index];
+        return cards[index];
     }
 
     /**
@@ -39,9 +47,9 @@ public abstract class Cards implements Comparable<Cards> {
      */
     public boolean hasSameRank(int index1, int index2) {
         if (isIllegalIndex(index1) || isIllegalIndex(index2)) {
-    	    throw new IllegalArgumentException();
-    	}
-    	return CARDS[index1].hasSameRank(CARDS[index2]);
+            throw new IllegalArgumentException();
+        }
+        return cards[index1].hasSameRank(cards[index2]);
     }
 
     /**
@@ -51,10 +59,10 @@ public abstract class Cards implements Comparable<Cards> {
      * @return
      */
     public boolean hasSameSuit(int index1, int index2) {
-    	if (isIllegalIndex(index1) || isIllegalIndex(index2)) {
-    	    throw new IllegalArgumentException();
-    	}
-    	return CARDS[index1].hasSameSuit(CARDS[index2]);
+        if (isIllegalIndex(index1) || isIllegalIndex(index2)) {
+            throw new IllegalArgumentException();
+        }
+        return cards[index1].hasSameSuit(cards[index2]);
     }
 
     /**
@@ -68,11 +76,11 @@ public abstract class Cards implements Comparable<Cards> {
      * @return
      */
     public String getNotion() {
-    	StringJoiner sj = new StringJoiner(" ");
-    	for (Card card : CARDS) {
-    	    sj.add(card.getNotion());
-    	}
-    	return sj.toString();
+        StringJoiner sj = new StringJoiner(" ");
+        for (Card card : cards) {
+            sj.add(card.getNotion());
+        }
+        return sj.toString();
     }
 
     /**
@@ -82,6 +90,6 @@ public abstract class Cards implements Comparable<Cards> {
      * @return
      */
     private boolean isIllegalIndex(int index) {
-        return index < 0 || index >= CARDS.length;
+        return index < 0 || index >= cards.length;
     }
 }
