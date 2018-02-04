@@ -43,7 +43,7 @@ public abstract class Cards implements Comparable<Cards> {
      * Compare if the cards have the same rank.
      * @param index1 index of card to compare
      * @param index2 index of card to compare
-     * @return
+     * @return if two cards have same rank
      */
     public final boolean hasSameRank(final int index1, final int index2) {
         if (isIllegalIndex(index1) || isIllegalIndex(index2)) {
@@ -56,7 +56,7 @@ public abstract class Cards implements Comparable<Cards> {
      * Compare if the cards have the same suit.
      * @param index1 index of card to compare
      * @param index2 index of card to compare
-     * @return
+     * @return if two cards have same suit
      */
     public final boolean hasSameSuit(final int index1, final int index2) {
         if (isIllegalIndex(index1) || isIllegalIndex(index2)) {

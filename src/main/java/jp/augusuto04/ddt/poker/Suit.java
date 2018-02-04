@@ -5,9 +5,13 @@ package jp.augusuto04.ddt.poker;
  * @author shin
  */
 public enum Suit {
+    /** spade. */
     SPADE("s"),
+    /** club. */
     CLUB("c"),
+    /** heart. */
     HEART("h︎"),
+    /** diamond. */
     DIAMOND("d︎");
 
     /** The notion of the suit. */
@@ -17,7 +21,7 @@ public enum Suit {
      * Constructor.
      * @param notion notion
      */
-    Suit(String notion) {
+    Suit(final String notion) {
         this.notion = notion;
     }
 

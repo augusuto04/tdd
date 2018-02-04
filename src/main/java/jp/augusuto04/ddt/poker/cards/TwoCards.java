@@ -35,13 +35,19 @@ public class TwoCards extends Cards {
         return Math.abs(getCard(0).getRank() - getCard(1).getRank()) == 1;
     }
 
+    /**
+     * Hand value of two card hand.
+     * @author shin
+     */
     private class TwoCardHandValue {
+        /** hand */
         private PokerHand hand;
+        /** cards to evaluate then hand is the same */
         private Card[] cards;
     }
 
     @Override
-    public final int compareTo(Cards o) {
+    public final int compareTo(final Cards o) {
         return 0;
     }
 }

@@ -5,21 +5,21 @@ package jp.augusuto04.ddt.poker;
  * @author shin
  */
 public class Card {
-    /** The suit of this card */
+    /** The suit of this card. */
     private final Suit suit;
 
-    /** The rank of this card */
+    /** The rank of this card. */
     private final int rank;
 
-    /** Rank of the Ace */
+    /** Rank of the Ace. */
     private static final int ACE = 1;
-    /** Rank of the Ten */
+    /** Rank of the Ten. */
     private static final int TEN = 10;
-    /** Rank of the Jack */
+    /** Rank of the Jack. */
     private static final int JACK = 11;
-    /** Rank of the Queen */
+    /** Rank of the Queen. */
     private static final int QUEEN = 12;
-    /** Rank of the King */
+    /** Rank of the King. */
     private static final int KING = 13;
 
     /**
