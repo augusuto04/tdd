@@ -50,7 +50,7 @@ public class TwoCards extends Cards {
          * @param twoCards hand
          */
         public TwoCardHandValue(final TwoCards twoCards) {
-            if (twoCards.hasSameRank(0, 1) && twoCards.hasSameSuit(0, 1)) {
+            if (twoCards.isRankConsecutive() && twoCards.hasSameSuit(0, 1)) {
                 setHand(PokerHand.STRAIGHT_FLUSH);
             } else if (twoCards.hasSameSuit(0, 1)) {
                 setHand(PokerHand.FLUSH);
