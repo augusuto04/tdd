@@ -44,8 +44,23 @@ public class TwoCards extends Cards {
      * @author shin
      */
     private class TwoCardHandValue extends HandValue {
-        public TwoCardHandValue(final TwoCards twoCards) {
 
+        /**
+         * Constructor.
+         * @param twoCards hand
+         */
+        public TwoCardHandValue(final TwoCards twoCards) {
+            if (twoCards.hasSameRank(0, 1) && twoCards.hasSameSuit(0, 1)) {
+                setHand(PokerHand.STRAIGHT_FLUSH);
+            } else if (twoCards.hasSameSuit(0, 1)) {
+                setHand(PokerHand.FLUSH);
+            } else if (twoCards.isRankConsecutive()) {
+                setHand(PokerHand.STRAIGHT);
+            } else if (twoCards.hasSameRank(0, 1)) {
+                setHand(PokerHand.PAIR);
+            } else {
+                setHand(PokerHand.HIGH_CARD);
+            }
         }
     }
 

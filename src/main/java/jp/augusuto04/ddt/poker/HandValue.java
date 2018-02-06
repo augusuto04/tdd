@@ -27,6 +27,14 @@ public abstract class HandValue {
     }
 
     /**
+     * Set hand.
+     * @param hand hand
+     */
+    protected final void setHand(PokerHand hand) {
+        this.hand = hand;
+    }
+
+    /**
      * Compare the strength of the two hands.
      * @param handvalue hand to compare
      * @return -1, 0, 1 if handvalue has more, same, less value
