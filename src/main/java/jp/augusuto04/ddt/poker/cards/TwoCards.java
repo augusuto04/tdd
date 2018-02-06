@@ -40,10 +40,7 @@ public class TwoCards extends Cards {
      * @author shin
      */
     private class TwoCardHandValue {
-        /** hand. */
-        private PokerHand hand;
-        /** cards to evaluate then hand is the same. */
-        private Card[] cards;
+
     }
 
     @Override

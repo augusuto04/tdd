@@ -8,15 +8,34 @@ import jp.augusuto04.ddt.poker.cards.TwoCards;
  */
 public enum PokerHand {
     /** straight flush. */
-    STRAIGHT_FLUSH,
+    STRAIGHT_FLUSH(5),
     /** flush. */
-    FLUSH,
+    FLUSH(4),
     /** straight. */
-    STRAIGHT,
+    STRAIGHT(3),
     /** pair. */
-    PAIR,
+    PAIR(2),
     /** high card. */
-    HIGH_CARD;
+    HIGH_CARD(1);
+
+    /** the hand value for comparing hand values. */
+    private int value;
+
+    /**
+     * Constructor.
+     * @param value value of hand
+     */
+    private PokerHand(int value) {
+        this.value = value;
+    }
+
+    /**
+     * Get the value of the hand.
+     * @return value
+     */
+    public final int getValue() {
+        return value;
+    }
 
     /**
      * Evaluate the hand for two card poker.

@@ -138,4 +138,15 @@ public class Card {
     public final boolean hasSameRank(final Card card) {
         return rank == card.getRank();
     }
+
+    /**
+     * Compare the rank strength of two cards.
+     * @param card card to compare
+     * @return -1, 0, 1
+     */
+    public final int compareRankStrength(final Card card) {
+        int thisCardRank = (rank == ACE) ? 14 : rank;
+        int compCardRank = (rank == ACE) ? 14 : rank;
+        return new Integer(thisCardRank).compareTo(compCardRank);
+    }
 }
