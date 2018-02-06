@@ -1,7 +1,5 @@
 package jp.augusuto04.ddt.poker;
 
-import jp.augusuto04.ddt.poker.cards.TwoCards;
-
 /**
  * Hands of poker.
  * @author shin
@@ -25,7 +23,7 @@ public enum PokerHand {
      * Constructor.
      * @param value value of hand
      */
-    private PokerHand(int value) {
+    private PokerHand(final int value) {
         this.value = value;
     }
 
@@ -37,22 +35,4 @@ public enum PokerHand {
         return value;
     }
 
-    /**
-     * Evaluate the hand for two card poker.
-     * @param cards cards to evaluate
-     * @return evaluation
-     */
-    public static final PokerHand evaluateHand(final TwoCards cards) {
-        if (cards.hasSameSuit(0, 1) && cards.isRankConsecutive()) {
-            return STRAIGHT_FLUSH;
-        } else if (cards.hasSameSuit(0, 1)) {
-            return FLUSH;
-        } else if (cards.isRankConsecutive()) {
-            return STRAIGHT;
-        } else if (cards.hasSameRank(0, 1)) {
-            return PAIR;
-        } else {
-            return HIGH_CARD;
-        }
-    }
 }

@@ -13,6 +13,8 @@ public class Card {
 
     /** Rank of the Ace. */
     private static final int ACE = 1;
+    /** Rank of Ace for calculating rank strength. */
+    private static final int ACE_STRENGTH = 14;
     /** Rank of the Ten. */
     private static final int TEN = 10;
     /** Rank of the Jack. */
@@ -145,8 +147,14 @@ public class Card {
      * @return -1, 0, 1
      */
     public final int compareRankStrength(final Card card) {
-        int thisCardRank = (rank == ACE) ? 14 : rank;
-        int compCardRank = (rank == ACE) ? 14 : rank;
+        int thisCardRank = rank;
+        if (thisCardRank == ACE) {
+            thisCardRank = ACE_STRENGTH;
+        }
+        int compCardRank = card.getRank();
+        if (compCardRank == ACE) {
+            compCardRank = ACE_STRENGTH;
+        }
         return new Integer(thisCardRank).compareTo(compCardRank);
     }
 }

@@ -6,7 +6,7 @@ import java.util.StringJoiner;
  * Holds multiple cards.
  * @author shin
  */
-public abstract class Cards implements Comparable<Cards> {
+public abstract class Cards {
 
     /** Cards of this hand. */
     private final Card[] cards;

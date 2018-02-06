@@ -1,5 +1,9 @@
 package jp.augusuto04.ddt.poker;
 
+/**
+ * Hand value.
+ * @author shin
+ */
 public abstract class HandValue {
     /** hand. */
     private PokerHand hand;
@@ -30,7 +34,8 @@ public abstract class HandValue {
     public final int compareTo(final HandValue handvalue) {
         if (hand.getValue() == handvalue.getHand().getValue()) {
             for (int i = 0; i < cards.length; i++) {
-                int comparedResult = cards[i].compareRankStrength(handvalue.getCards()[i]);
+                int comparedResult = cards[i].compareRankStrength(
+                        handvalue.getCards()[i]);
                 if (comparedResult != 0) {
                     return comparedResult;
                 }

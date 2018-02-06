@@ -2,6 +2,7 @@ package jp.augusuto04.ddt.poker.cards;
 
 import jp.augusuto04.ddt.poker.Card;
 import jp.augusuto04.ddt.poker.Cards;
+import jp.augusuto04.ddt.poker.HandValue;
 import jp.augusuto04.ddt.poker.PokerHand;
 
 /**
@@ -10,6 +11,8 @@ import jp.augusuto04.ddt.poker.PokerHand;
  */
 public class TwoCards extends Cards {
 
+    private final TwoCardHandValue handValue;
+
     /**
      * Constructor.
      * @param firstCard first card
@@ -17,6 +20,7 @@ public class TwoCards extends Cards {
      */
     public TwoCards(final Card firstCard, final Card secondCard) {
         super(firstCard, secondCard);
+        handValue = new TwoCardHandValue(this);
     }
 
     /**
@@ -24,7 +28,7 @@ public class TwoCards extends Cards {
      */
     @Override
     public final PokerHand evalHand() {
-        return PokerHand.evaluateHand(this);
+        return handValue.getHand();
     }
 
     /**
@@ -39,12 +43,18 @@ public class TwoCards extends Cards {
      * Hand value of two card hand.
      * @author shin
      */
-    private class TwoCardHandValue {
+    private class TwoCardHandValue extends HandValue {
+        public TwoCardHandValue(final TwoCards twoCards) {
 
+        }
     }
 
-    @Override
-    public final int compareTo(final Cards o) {
-        return 0;
+    /**
+     * Compare the strength of two hands.
+     * @param twoCards two card hand to compare
+     * @return compared result
+     */
+    public final int compareTo(final TwoCards twoCards) {
+        return handValue.compareTo(new TwoCardHandValue(twoCards));
     }
 }
